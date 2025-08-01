@@ -1,0 +1,138 @@
+---
+title: Introduction to eSRITI Platform
+description: A quick guide to the platform
+---
+
+# Selamat Datang di platform Dokumentasi eSRITI
+
+Platform ini dirancang untuk memudahkan pengembangan aplikasi web dengan menyediakan berbagai fitur dan komponen yang siap pakai. Dokumentasi ini akan membantu anda memahami cara menggunakan platform ini secara efektif.
+
+## Papan Pemuka
+Papan Pemuka adalah laman utama bagi platform eSRITI. Di sini, anda dapat melihat rangkaian ke laman lain seperti halaman pelajar, kakitangan sekolah, dokumen, profil sekolah dan tetapan serta pelbagai fitur lain yang tersedia.
+<img src="/landingpage.png" alt="Landing Page" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '100%' }} />
+<img src="/landingpagedark.png" alt="Landing Page Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '100%' }} />
+
+import SidebarToggleButton from '@/components/sidebartogglebutton'
+
+### Fitur Tersedia
+
+<Tabs defaultValue="navigation bar" size="sm" className="w-full" onTabClick={(value) => console.log("Tab clicked:", value)}>
+  <TabsList className="grid w-full md:w-[30%] grid-cols-2">
+    <Tab value="navigation bar">Palang Navigasi</Tab>
+    <Tab value="sidebar">Palang Sisi</Tab>
+  </TabsList>
+  <TabsContent value="navigation bar">
+    <img src="/navigationbar.png" alt="Navigation Bar" style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '100%' }} />
+    <Preview>
+      <div className="flex flex-row gap-10 items-center">
+
+        <div className="flex flex-col gap-2 items-center">
+            <SidebarToggleButton />
+            <Note type="none" className="mt-2 text-xs px-1 py-1 w-full text-center ">Menutup dan membuka menu tepi.</Note>
+        </div>
+
+        <div className="flex flex-col items-center">
+            <Popover>
+                <PopoverTrigger>
+                <Button variant="none" size="xl">[2025]</Button>
+                </PopoverTrigger>
+                <PopoverContent className="p-2 w-24 flex flex-col items-center" side="bottom" align="center">
+                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2025</button>
+                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2024</button>
+                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2023</button>
+                </PopoverContent>
+            </Popover>
+            
+            <Note type="none" className="mt-2 text-xs px-2 py-1 w-full text-center">Menukar pilihan sesi.</Note>
+        </div>
+
+        <div className="flex flex-col items-center">
+            <Button variant="none" size="xl">
+                <img src="/logout.png" alt="Logout Icon" className="w-24 h-10" />
+            </Button>
+            <Note type="none" className="mt-2 text-xs px-4 py-1 w-full text-center">Log keluar dari akaun.</Note>
+        </div>
+
+
+        <div className="flex flex-col items-center">
+            <Popover>
+                <PopoverTrigger>
+                <Button variant="none" size="xl">
+                    <img src="/malaysian.png" alt="Language Icon" className="w-14 h-7" />
+                </Button>
+                </PopoverTrigger>
+                <PopoverContent className="p-0.5 w-28 flex flex-col items-center" side="bottom" align="center">
+                <button className="w-full px-2 py-0 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
+                    <img src="/malaysian.png" alt="Malay" className="w-4 h-3" />
+                    Malay
+                </button>
+                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
+                    <img src="/uk.png" alt="English" className="w-4 h-3" />
+                    English
+                </button>
+                </PopoverContent>
+            </Popover>
+            <Note type="none" className="mt-2 text-xs px-3 py-1 w-full text-center">Tukar bahasa laman.</Note>
+        </div>
+
+        <div className="flex flex-col items-center">
+            <Button variant="none" size="xl">
+                <img src="/expand.png" alt="Fullscreen Icon" className="w-10 h-10" />
+            </Button>
+            <Note type="none" className="mt-2 text-xs px-2 py-1 w-full text-center">Menukar kepada skrin penuh.</Note>
+        </div>
+
+        <div className="flex flex-col items-center">
+            <Popover>
+                <PopoverTrigger>
+                <Button variant="none" size="xl">
+                    <img src="/lightmode.png" alt="Language Icon" className="w-10 h-10" />
+                </Button>
+                </PopoverTrigger>
+                <PopoverContent className="p-0.5 w-28 flex flex-col items-center" side="bottom" align="center">
+                <button className="w-full px-2 py-0 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
+                    Cerah
+                </button>
+                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
+                    Gelap
+                </button>
+                </PopoverContent>
+            </Popover>
+            <Note type="none" className="mt-2 text-xs px-3 py-1 w-full text-center">Tukar kepada mod terang dan gelap.</Note>
+        </div>
+
+        </div>
+    </Preview>
+    </TabsContent>
+
+  <TabsContent value="code">
+    ```tsx
+    import { Tabs, TabsContent, TabsList, Tab } from "@/components/tabs";
+    
+    export default function Example() {
+      return (
+        <Tabs defaultValue="account" size="sm" className="w-full">
+          <TabsList className="grid grid-cols-2">
+            <Tab value="account">Account</Tab>
+            <Tab value="password">Password</Tab>
+          </TabsList>
+          <TabsContent value="account">
+            <div className="p-4 border border-[var(--color-border)] rounded-md mt-2">
+              <h3 className="text-lg font-medium">Account Settings</h3>
+              <p className="text-sm text-gray-500 mt-1">Manage your account settings and preferences.</p>
+            </div>
+          </TabsContent>
+          <TabsContent value="password">
+            <div className="p-4 border border-[var(--color-border)] rounded-md mt-2">
+              <h3 className="text-lg font-medium">Password Settings</h3>
+              <p className="text-sm text-gray-500 mt-1">Change your password and security settings.</p>
+            </div>
+          </TabsContent>
+        </Tabs>
+      );
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+
