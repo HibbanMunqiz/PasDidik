@@ -22,12 +22,10 @@ import {
   UserAvatar,
   NestedLink,
 } from '@/components/sidebar';
-import { Github } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 import Header from '@/components/header';
 import { ModeToggle } from '@/components/mode-toggle';
-import { Button } from '@/components/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function DocsLayout({

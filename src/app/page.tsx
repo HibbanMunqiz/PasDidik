@@ -1,5 +1,4 @@
 'use client';
-import { Github } from 'lucide-react';
 import { ModeToggle } from '@/components/mode-toggle';
 import Image from 'next/image';
 import { Button } from '@/components/button';
