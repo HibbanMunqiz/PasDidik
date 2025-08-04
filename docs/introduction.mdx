@@ -24,84 +24,80 @@ import SidebarToggleButton from '@/components/sidebartogglebutton'
   <TabsContent value="navigation bar">
     <img src="/navigationbar.png" alt="Navigation Bar" style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '100%' }} />
     <Preview>
-      <div className="flex flex-row gap-10 items-center">
-
-        <div className="flex flex-col gap-2 items-center">
-            <SidebarToggleButton />
-            <Note type="none" className="mt-2 text-xs px-1 py-1 w-full text-center ">Menutup dan membuka menu tepi.</Note>
-        </div>
-
+      <div className="grid grid-cols-3 gap-10 justify-items-center">
+        {/* Sidebar toggle button */}
         <div className="flex flex-col items-center">
-            <Popover>
-                <PopoverTrigger>
-                <Button variant="none" size="xl">[2025]</Button>
-                </PopoverTrigger>
-                <PopoverContent className="p-2 w-24 flex flex-col items-center" side="bottom" align="center">
-                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2025</button>
-                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2024</button>
-                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2023</button>
-                </PopoverContent>
-            </Popover>
-            
-            <Note type="none" className="mt-2 text-xs px-2 py-1 w-full text-center">Menukar pilihan sesi.</Note>
+          <SidebarToggleButton />
+          <Note type="none" className="mt-2 text-xs px-1 py-1 w-full text-center">Menutup dan membuka menu tepi.</Note>
         </div>
 
+        {/* Year selector */}
         <div className="flex flex-col items-center">
-            <Button variant="none" size="xl">
-                <img src="/logout.png" alt="Logout Icon" className="w-24 h-10" />
-            </Button>
-            <Note type="none" className="mt-2 text-xs px-4 py-1 w-full text-center">Log keluar dari akaun.</Note>
+          <Popover>
+            <PopoverTrigger>
+              <Button variant="none" size="xl">[2025]</Button>
+            </PopoverTrigger>
+            <PopoverContent className="p-2 w-24 flex flex-col items-center" side="bottom" align="center">
+              <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2025</button>
+              <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2024</button>
+              <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm text-center">2023</button>
+            </PopoverContent>
+          </Popover>
+          <Note type="none" className="mt-2 text-xs px-2 py-1 w-full text-center">Menukar pilihan sesi.</Note>
         </div>
 
-
+        {/* Logout button */}
         <div className="flex flex-col items-center">
-            <Popover>
-                <PopoverTrigger>
-                <Button variant="none" size="xl">
-                    <img src="/malaysian.png" alt="Language Icon" className="w-14 h-7" />
-                </Button>
-                </PopoverTrigger>
-                <PopoverContent className="p-0.5 w-28 flex flex-col items-center" side="bottom" align="center">
-                <button className="w-full px-2 py-0 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
-                    <img src="/malaysian.png" alt="Malay" className="w-4 h-3" />
-                    Malay
-                </button>
-                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
-                    <img src="/uk.png" alt="English" className="w-4 h-3" />
-                    English
-                </button>
-                </PopoverContent>
-            </Popover>
-            <Note type="none" className="mt-2 text-xs px-3 py-1 w-full text-center">Tukar bahasa laman.</Note>
+          <Button variant="none" size="xl">
+            <img src="/logout.png" alt="Logout Icon" className="w-10 h-10" />
+          </Button>
+          <Note type="none" className="mt-2 text-xs px-4 py-1 w-full text-center">Log keluar dari akaun.</Note>
         </div>
 
+        {/* Language selector */}
         <div className="flex flex-col items-center">
-            <Button variant="none" size="xl">
-                <img src="/expand.png" alt="Fullscreen Icon" className="w-10 h-10" />
-            </Button>
-            <Note type="none" className="mt-2 text-xs px-2 py-1 w-full text-center">Menukar kepada skrin penuh.</Note>
+          <Popover>
+            <PopoverTrigger>
+              <Button variant="none" size="xl">
+                <img src="/malaysian.png" alt="Language Icon" className="w-14 h-7" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="p-0.5 w-28 flex flex-col items-center" side="bottom" align="center">
+              <button className="w-full px-2 py-0 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center gap-2">
+                <img src="/malaysian.png" alt="Malay" className="w-4 h-3" /> Malay
+              </button>
+              <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center gap-2">
+                <img src="/uk.png" alt="English" className="w-4 h-3" /> English
+              </button>
+            </PopoverContent>
+          </Popover>
+          <Note type="none" className="mt-2 text-xs px-3 py-1 w-full text-center">Tukar bahasa laman.</Note>
         </div>
 
+        {/* Fullscreen button */}
         <div className="flex flex-col items-center">
-            <Popover>
-                <PopoverTrigger>
-                <Button variant="none" size="xl">
-                    <img src="/lightmode.png" alt="Language Icon" className="w-10 h-10" />
-                </Button>
-                </PopoverTrigger>
-                <PopoverContent className="p-0.5 w-28 flex flex-col items-center" side="bottom" align="center">
-                <button className="w-full px-2 py-0 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
-                    Cerah
-                </button>
-                <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left flex items-center">
-                    Gelap
-                </button>
-                </PopoverContent>
-            </Popover>
-            <Note type="none" className="mt-2 text-xs px-3 py-1 w-full text-center">Tukar kepada mod terang dan gelap.</Note>
+          <Button variant="none" size="xl">
+            <img src="/expand.png" alt="Fullscreen Icon" className="w-10 h-10" />
+          </Button>
+          <Note type="none" className="mt-2 text-xs px-2 py-1 w-full text-center">Menukar kepada skrin penuh.</Note>
         </div>
 
+        {/* Light/Dark toggle */}
+        <div className="flex flex-col items-center">
+          <Popover>
+            <PopoverTrigger>
+              <Button variant="none" size="xl">
+                <img src="/lightmode.png" alt="Mode Icon" className="w-10 h-10" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="p-0.5 w-28 flex flex-col items-center" side="bottom" align="center">
+              <button className="w-full px-2 py-0 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left">Cerah</button>
+              <button className="w-full px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded text-sm text-left">Gelap</button>
+            </PopoverContent>
+          </Popover>
+          <Note type="none" className="mt-2 text-xs px-3 py-1 w-full text-center">Tukar kepada mod terang dan gelap.</Note>
         </div>
+      </div>
     </Preview>
     </TabsContent>
 
