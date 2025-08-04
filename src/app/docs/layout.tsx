@@ -20,7 +20,6 @@ import {
   SidebarHeaderTitle,
   NestedLink,
 } from '@/components/sidebar';
-import { useRouter } from 'next/navigation';
 
 import Header from '@/components/header';
 import { ModeToggle } from '@/components/mode-toggle';
