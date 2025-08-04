@@ -14,12 +14,10 @@ import {
   Sidebar,
   SidebarHeader,
   SidebarContent,
-  SidebarFooter,
   SidebarMenuItem,
   SidebarTrigger,
   SidebarHeaderLogo,
   SidebarHeaderTitle,
-  UserAvatar,
   NestedLink,
 } from '@/components/sidebar';
 import { useRouter } from 'next/navigation';
@@ -34,7 +32,6 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   // Destructure sidebarNav from configDocs
-  const router = useRouter();
   const isMobile = useIsMobile();
   return (
     <SidebarLayout>
