@@ -167,6 +167,7 @@ export function Sidebar({
             className
           )}
           style={{ maxWidth: `${maxWidth}px` }}
+          {...props}
         >
           {children}
         </aside>
