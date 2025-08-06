@@ -8,7 +8,7 @@ export const Preview = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      `p-4 h-[330px] justify-items-center content-center rounded-lg border border-border bg-muted text-card-foreground`,
+      `p-4 w-full max-w-md sm:max-w-3xl mx-auto rounded-lg border border-border bg-muted text-card-foreground`,
       className
     )}
     ref={ref}
