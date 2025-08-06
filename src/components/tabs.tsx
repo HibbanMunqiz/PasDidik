@@ -15,12 +15,12 @@ const sizeClasses: Record<Size, string> = {
 
 const typeClassName = {
   box: {
-    indicator: 'h-full bg-muted border border-border rounded-lg', // Box-style indicator (full height, with a border)
-    button: '', // Text color for active button
+    indicator: '', // Box-style indicator (full height, with a border)
+    button: 'bg-muted text-foreground border border-border rounded-md shadow-sm', // Text color for active button
   },
   underline: {
     indicator: 'h-0.5 bg-primary', // Underline-style indicator (thin and bottom-aligned)
-    button: '', // White text color for active button
+    button: 'text-primary', // White text color for active button
   },
 };
 
@@ -48,8 +48,7 @@ interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   onValueChange?: (value: string) => void;
   onTabClick?: (value: string) => void;
   size?: Size;
-  type?: 'box' | 'underline'; // Type of tabs (box or underline)
-}
+  }
 
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
   (
@@ -60,7 +59,6 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       onValueChange,
       onTabClick,
       size = 'md',
-      type = 'underline', // Default to 'underline' type
       ...props
     },
     ref
@@ -72,6 +70,9 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       Record<string, React.RefObject<HTMLButtonElement>>
     >({});
     const indicatorRef = React.useRef<HTMLDivElement>(null);
+
+    // Responsive tab type (box on mobile, underline on desktop)
+    const tabType: 'box' = 'box'; // Change this to 'underline' for underline style
 
     React.useEffect(() => {
       if (value !== undefined) {
@@ -85,26 +86,32 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 
       const updateIndicator = () => {
         const tabElement = selectedTabRef.current;
-        const tabElBounding = tabElement?.getBoundingClientRect();
+        const container = tabElement.offsetParent as HTMLElement;
+        const tabRect = tabElement.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+
+        const offsetX = tabRect.left - containerRect.left;
+        const offsetY = tabRect.top - containerRect.top;
+
         if (indicatorRef.current) {
-          indicatorRef.current!.style.width = `${tabElBounding?.width}px`;
-          indicatorRef.current!.style.transform = `translateX(${tabElement.offsetLeft}px)`;
+          indicatorRef.current.style.width = `${tabRect.width}px`;
+          indicatorRef.current.style.height = `${tabRect.height}px`;
+          indicatorRef.current.style.transform = `translateX(${offsetX}px) translateY(${offsetY}px)`;
         }
       };
 
       updateIndicator();
 
-      // Create a ResizeObserver that will update the indicator when the tab size changes.
-      const observer = new ResizeObserver(() => {
-        updateIndicator();
-      });
-      observer.observe(selectedTabRef.current);
+      const observer = new ResizeObserver(() => updateIndicator());
+      if (selectedTabRef.current) {
+        observer.observe(selectedTabRef.current);
+      }
 
-      // Clean up the observer when the effect is re-run or the component unmounts.
       return () => {
         observer.disconnect();
       };
     }, [selectedValue, tabRefs]);
+
 
     const handleValueChange = React.useCallback(
       (newValue: string) => {
@@ -130,7 +137,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
           registerTab,
           size,
           indicatorRef,
-          typeClassName: typeClassName[type], // Pass the selected type class names
+          typeClassName: typeClassName[tabType], // Pass the selected type class names
         }}
       >
         <div ref={ref} className={cn('w-full', className)} {...props} />
@@ -151,19 +158,21 @@ const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
         <div
           ref={ref}
           className={cn(
-            'relative inline-flex w-full items-center justify-center rounded-lg p-1',
+            'relative flex flex-wrap items-center justify-center gap-2',
             className
           )}
           {...props}
         />
-        <div
-          ref={indicatorRef}
-          className={cn(
-            'z-0 absolute bottom-0 transition-all duration-300 ease-in-out',
-            typeClassName.indicator // Apply the indicator style based on type
-          )}
-          aria-hidden="true"
-        />
+        {typeClassName.indicator && (
+          <div
+            ref={indicatorRef}
+            className={cn(
+              'z-0 absolute bottom-0 transition-all duration-300 ease-in-out',
+              typeClassName.indicator
+            )}
+            aria-hidden="true"
+          />
+        )}
       </div>
     );
   }
