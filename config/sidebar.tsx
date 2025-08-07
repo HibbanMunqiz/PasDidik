@@ -2,7 +2,7 @@ import { Component, Paintbrush, Rocket, Search, Wrench, User } from 'lucide-reac
 
 export const sidebarNav = [
   {
-    title: "Laman Utama",
+    title: "Papan Pemuka",
     icon: <Rocket className="h-5 w-5" />,
     href: "/docs/introduction",
     defaultOpen: true,
@@ -13,22 +13,20 @@ export const sidebarNav = [
     icon: <User className="h-5 w-5" />,
     href: "/docs/pelajar",
     defaultOpen: true,
-    pages: [] 
-  },
-  {
-    title: 'Getting Started',
-    icon: <Rocket className="h-5 w-5" />,
-    defaultOpen: true,
     pages: [
       {
-        title: 'Installation',
-        href: '/docs/getting-started/installation',
+        title: 'Pelajar Semasa',
+        href: '/docs/pelajar',
       },
       {
-        title: 'Quick Start',
-        href: '/docs/getting-started/quick-start',
+        title: 'Senarai Induk Pelajar',
+        href: '/docs/pelajar/senarai-induk-pelajar',
       },
-    ],
+      {
+        title: 'Ibu Bapa',
+        href: '/docs/pelajar/ibu-bapa',
+      },
+    ] 
   },
   {
     title: 'Search Bar',

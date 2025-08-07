@@ -8,20 +8,19 @@ Laman pelajar eSRITI menyediakan akses kepada pelbagai maklumat dan fungsi yang 
 <img src="/lamanpelajar.png" alt="Student Page" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '100%' }} />
 <img src="/lamanpelajardark.png" alt="Student Page Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '100%' }} />
 
-import { Plus } from 'lucide-react';
+import { Plus, Eye, Pencil } from 'lucide-react';
 
-## Mengemaskini Data Pelajar
+## Mengendali Data Pelajar
 
 <Tabs defaultValue="menambah pelajar" size="sm" className="w-full" onTabClick={(value) => console.log("Tab clicked:", value)}>
   <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full gap-5 text-center">
     <Tab value="menambah pelajar" className="min-w-0 truncate">Menambah Pelajar</Tab>
-    <Tab value="2" className="min-w-0 truncate">2</Tab>
-    <Tab value="3" className="min-w-0 truncate">3</Tab>
-    <Tab value="4" className="min-w-0 truncate">4</Tab>
+    <Tab value="mengemaskini data" className="min-w-0 truncate">Mengemaskini Data</Tab>
+    <Tab value="menambah program" className="min-w-0 truncate">Menambah Program</Tab>
    </TabsList>
     <TabsContent value="menambah pelajar">
         <Preview>
-            <div className="space-y-6"> 
+            <div className="space-y-6 ml-5"> 
                 <Steps>
                         <Step>
                             <StepTitle>Langkah 1: Tekan butang 'tambah baru'</StepTitle>
@@ -55,4 +54,88 @@ import { Plus } from 'lucide-react';
             </div> 
         </Preview>
     </TabsContent>
+
+    <TabsContent value="mengemaskini data">
+        <Preview>
+            <div className="space-y-6 ml-5"> 
+                <Steps>
+                        <Step>
+                            <StepTitle>Langkah 1: Pilih pelajar yang ingin dikemaskini data di bar carian</StepTitle>
+                            <StepContent>
+                                <img src="/mencaripelajar.png" alt="Find Student" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                                <img src="/mencaripelajardark.png" alt="Find Student Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            </StepContent>
+                        </Step>
+
+                        <Step>
+                            <StepTitle>Langkah 2: Tekan butang icon 'mata' pada lajur 'Tindakan' di jadual nama pelajar </StepTitle>
+                            <StepContent>
+                            <div className="mt-4 mb-4">
+                                <Button variant="primary" size="xs" className="flex items-center gap-2">
+                                <Eye className="w-5 h-5 text-green-500" strokeWidth={3}/>
+                                </Button>
+                            </div>
+                            </StepContent>
+                        </Step>
+
+                        <Step>
+                            <StepTitle>Langkah 3: Pilih jenis maklumat yang hendak dikemaskini</StepTitle>
+                            <StepContent>
+                                <img src="/profilpelajar.png" alt="Find Student Button" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '70%' }} />
+                                <img src="/profilpelajardark.png" alt="Find Student Button Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                                <p>Tekan 'Cari' untuk mencari pelajar dari senarai pelajar</p>
+                            </StepContent>
+                        </Step>
+
+                        <Step>
+                            <StepTitle>Langkah 4: Tekan butang kemaskini pada bucu kanan maklumat pelajar dan kemaskini data pelajar</StepTitle>
+                            <StepContent>
+                                <Button variant="primary" size="xs" className="flex items-center gap-2">
+                                <Pencil className="w-5 h-5 text-green-500" strokeWidth={3}/>
+                                </Button>
+                                <img src="/kemaskinipelajar.png" alt="Find Student Button" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '70%' }} />
+                                <img src="/kemaskinipelajardark.png" alt="Find Student Button Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                                <p>Tekan 'Kemaskini' untuk memperbaharui maklumat pelajar dan 'Batal' untuk batalkan.  </p>
+                            </StepContent>
+                        </Step>
+                </Steps>
+            </div> 
+        </Preview>
+    </TabsContent>
+
+    <TabsContent value="menambah program">
+        <Preview>
+            <div className="space-y-6 ml-5"> 
+                <Steps>
+                        <Step>
+                            <StepTitle>Langkah 1: Pilih pelajar yang hendak ditambah program dengan menanda kotak di sebelah kiri lajur nama pelajar.</StepTitle>
+                            <StepContent>
+                                <img src="/tickpelajar.png" alt="Add Program" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                                <img src="/tickpelajardark.png" alt="Add Program Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            </StepContent>
+                        </Step>
+
+                        <Step>
+                        <StepTitle>Langkah 2: Pilih menu 'Tambah Program dan Kelas' di tindakan pukal dan tekan 'Teruskan'</StepTitle>
+                        <StepContent>
+                            <img src="/tindakanpukal.png" alt="Tindakan Pukal" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            <img src="/tindakanpukaldark.png" alt="Tindakan Pukal Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+            
+                        </StepContent>
+                        </Step>
+
+                        <Step>
+                        <StepTitle>Langkah 3: Cari pelajar yang telah ditambah di senarai pelajar</StepTitle>
+                        <StepContent>
+                            <img src="/tambahprogram.png" alt="Tambah Program" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            <img src="/tambahprogramdark.png" alt="Tambah Program Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            <p>Tekan 'Hantar' untuk mengesahkan penambahan dan 'Batal' untuk membatalkan tambah program.</p>
+                        </StepContent>
+                        </Step>
+                </Steps>
+            </div> 
+        </Preview>
+    </TabsContent>
+
+    
 </Tabs>
