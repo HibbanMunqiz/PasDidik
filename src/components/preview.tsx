@@ -16,9 +16,6 @@ export const Preview = React.forwardRef<
         lg:max-w-5xl
         xl:max-w-screen-xl
         min-h-[330px]
-        md:min-h-[400px]
-        lg:min-h-[500px]
-        xl:min-h-[600px]
         p-5
         mx-auto
         rounded-lg
