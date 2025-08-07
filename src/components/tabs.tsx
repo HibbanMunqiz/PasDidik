@@ -72,7 +72,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     const indicatorRef = React.useRef<HTMLDivElement>(null);
 
     // Responsive tab type (box on mobile, underline on desktop)
-    const tabType: 'box' = 'box'; // Change this to 'underline' for underline style
+    const tabType = 'box' as const; // Change this to 'underline' for underline style
 
     React.useEffect(() => {
       if (value !== undefined) {
