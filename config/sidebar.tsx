@@ -11,16 +11,15 @@ export const sidebarNav = [
   {
     title: "Pelajar",
     icon: <User className="h-5 w-5" />,
-    href: "/docs/pelajar",
     defaultOpen: true,
     pages: [
       {
         title: 'Pelajar Semasa',
-        href: '/docs/pelajar',
+        href: '/docs/pelajar/pelajar-semasa',
       },
       {
         title: 'Senarai Induk Pelajar',
-        href: '/docs/pelajar/senarai-induk-pelajar',
+        href: '/docs/pelajar/senarai-induk',
       },
       {
         title: 'Ibu Bapa',

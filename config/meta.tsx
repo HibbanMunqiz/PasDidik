@@ -1,6 +1,6 @@
 export const meta = {
   metadataBase: new URL('https://pinexio.vercel.app'),
-  title: 'Pinexio - Documentation template',
+  title: 'PasDidik Dokumentasi',
   description:
     'A customizable Open Source documentation template built with Next.js',
   authors: [{ name: 'Sanjay Rajeev' }],
