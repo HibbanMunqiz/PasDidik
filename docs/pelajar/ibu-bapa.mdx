@@ -37,17 +37,59 @@ import { Plus, Eye, Pencil } from 'lucide-react';
                         <Step>
                         <StepTitle>Langkah 2: Isi semua matlumat yang diperlukan</StepTitle>
                         <StepContent>
-                            <img src="/tambahpelajar.png" alt="Add Student Form" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
-                            <img src="/tambahpelajardark.png" alt="Add Student Form Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            <img src="/ibu_bapa/tambahbaru.png" alt="Add Parents Form" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
+                            <img src="/ibu_bapa/tambahbarudark.png" alt="Add Parents Form Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
                             <p>Setelah selesai, tekan butang 'Hantar'</p>
                         </StepContent>
                         </Step>
                         <Step>
-                        <StepTitle>Langkah 3: Cari pelajar yang telah ditambah di senarai pelajar</StepTitle>
+                        <StepTitle>Langkah 3: Cari nama yang telah ditambah di senarai penjaga</StepTitle>
                         <StepContent>
-                            <img src="/caripelajar.png" alt="Find Student Button" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
-                            <img src="/caripelajardark.png" alt="Find Student Button Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
-                            <p>Tekan 'Cari' untuk mencari pelajar dari senarai pelajar</p>
+                            <div className="flex flex-wrap justify-center items-center gap-4 mt-4 mb-4">
+                                {/* Search Input */}
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium mb-1">Terma Carian</label>
+                                    <input
+                                    type="text"
+                                    placeholder="Masukkan kata carian..."
+                                    className="border border-gray-300 rounded px-3 py-2 text-sm w-48"
+                                    />
+                                </div>
+
+                                {/* Sort By */}
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium mb-1">Susun Mengikut</label>
+                                    <select className="border border-gray-300 rounded px-3 py-2 text-sm w-40">
+                                    <option value="created_at">MASA DICIPTA</option>
+                                    <option value="title">TAJUK</option>
+                                    </select>
+                                </div>
+
+                                {/* Order */}
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium mb-1">A↑↓Z</label>
+                                    <select className="border border-gray-300 rounded px-3 py-2 text-sm w-28">
+                                    <option value="asc">A TO Z</option>
+                                    <option value="desc">Z TO A</option>
+                                    </select>
+                                </div>
+
+                                {/* Limit */}
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium mb-1">Limit</label>
+                                    <select className="border border-gray-300 rounded px-3 py-2 text-sm w-20">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    </select>
+                                </div>
+
+                                {/* Search Button */}
+                                <button className=" mt-5 bg-green-500 text-white rounded-md hover:bg-green-600 text-[10px] px-4 py-[2px] w-28 h-[24px] leading-[1] flex items-center justify-center">
+                                    Cari
+                                </button>
+                            </div>
+                            <p>Tekan 'Cari' untuk mencari ibu bapa dari senarai penjaga</p>
                         </StepContent>
                         </Step>
                 </Steps>
