@@ -145,7 +145,7 @@ export function Sidebar({
     useSidebar();
 
   // For mobile: use a fixed overlay when sidebar is open
-  if (isMobile) {
+    if (isMobile) {
     return (
       <>
         {isOpen && (
@@ -168,10 +168,13 @@ export function Sidebar({
           )}
           style={{ maxWidth: `${maxWidth}px` }}
           {...props}
-        />
+        >
+          {children}
+        </aside>
       </>
     );
   }
+
 
   // For desktop: use a fixed sidebar
   return (

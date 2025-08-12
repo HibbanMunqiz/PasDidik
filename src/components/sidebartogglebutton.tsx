@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "./button";
-import { ChevronRight } from "lucide-react"; // Import as requested
 
 // Simple dark mode detection using document.documentElement.classList
 function useDarkMode() {

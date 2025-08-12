@@ -14,20 +14,15 @@ import {
   Sidebar,
   SidebarHeader,
   SidebarContent,
-  SidebarFooter,
   SidebarMenuItem,
   SidebarTrigger,
   SidebarHeaderLogo,
   SidebarHeaderTitle,
-  UserAvatar,
   NestedLink,
 } from '@/components/sidebar';
-import { Github } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 
 import Header from '@/components/header';
 import { ModeToggle } from '@/components/mode-toggle';
-import { Button } from '@/components/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function DocsLayout({
@@ -36,7 +31,6 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   // Destructure sidebarNav from configDocs
-  const router = useRouter();
   const isMobile = useIsMobile();
   return (
     <SidebarLayout>
