@@ -83,16 +83,16 @@ import { Plus, Eye, Pencil } from 'lucide-react';
                             <StepContent>
                                 <img src="/pelajar_semasa/profilpelajar.png" alt="Find Student Button" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '70%' }} />
                                 <img src="/pelajar_semasa/profilpelajardark.png" alt="Find Student Button Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
-                                <p>Tekan 'Cari' untuk mencari pelajar dari senarai pelajar</p>
+                                <p>Tekan icon 'pencel' untuk mengemaskini data pelajar </p>
+                                <Button variant="primary" size="xs" className="flex items-center gap-2 mb-4">
+                                <Pencil className="w-5 h-5 text-green-500" strokeWidth={3}/>
+                                </Button>
                             </StepContent>
                         </Step>
 
                         <Step>
-                            <StepTitle>Langkah 4: Tekan butang kemaskini pada bucu kanan maklumat pelajar dan kemaskini data pelajar</StepTitle>
+                            <StepTitle>Langkah 4: Isi data pelajar yang hendak diperbaharui</StepTitle>
                             <StepContent>
-                                <Button variant="primary" size="xs" className="flex items-center gap-2">
-                                <Pencil className="w-5 h-5 text-green-500" strokeWidth={3}/>
-                                </Button>
                                 <img src="/pelajar_semasa/kemaskinipelajar.png" alt="Find Student Button" className='block dark:hidden' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '70%' }} />
                                 <img src="/pelajar_semasa/kemaskinipelajardark.png" alt="Find Student Button Dark Mode" className='hidden dark:block' style={{ marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem', maxWidth: '40%' }} />
                                 <p>Tekan 'Kemaskini' untuk memperbaharui maklumat pelajar dan 'Batal' untuk batalkan.  </p>
