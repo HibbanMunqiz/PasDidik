@@ -1,9 +1,9 @@
-import { Component, Paintbrush, Rocket, Search, Wrench, User } from 'lucide-react';
+import { Search, User, LayoutDashboard, Clipboard, School, FileUser, Settings } from 'lucide-react';
 
 export const sidebarNav = [
   {
     title: "Papan Pemuka",
-    icon: <Rocket className="h-5 w-5" />,
+    icon: <LayoutDashboard className="h-5 w-5" />,
     href: "/docs/introduction",
     defaultOpen: true,
     pages: [] 
@@ -26,6 +26,34 @@ export const sidebarNav = [
         href: '/docs/pelajar/ibu-bapa',
       },
     ] 
+  },
+  {
+    title: 'Senarai Kakitangan',
+    icon: <School className="h-5 w-5" />,
+    defaultOpen: true,
+    href: '/docs/senarai-kakitangan',
+    pages: [],
+  },
+  {
+    title: 'Dokumen',
+    icon: <Clipboard className="h-5 w-5" />,
+    defaultOpen: true,
+    href: '/docs/dokumen',
+    pages: []
+  },
+  {
+    title: 'Profil Sekolah',
+    icon: <FileUser className="h-5 w-5" />,
+    defaultOpen: true,
+    href: '/docs/profile-sekolah',
+    pages: []
+  },
+  {
+    title: 'Tetapan',
+    icon: <Settings className="h-5 w-5" />,
+    defaultOpen: true,
+    href: '/docs/tetapan',
+    pages: []
   },
   {
     title: 'Search Bar',
